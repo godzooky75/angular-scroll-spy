@@ -74,7 +74,9 @@
 					this.takeMeasurements = function() {
 						viewportHeight = $window.innerHeight;
 						elementHeight = target.offsetHeight;
-						topOffset = target.offsetTop;
+						// Get the top of the element relative to the viewport
+						// topOffset = target.offsetTop;
+						topOffset = target.getClientBoundingRect().top;
 						// $log.debug('take measurements for '+$attrs.id+'- viewportHeight:'+viewportHeight+', element height: '+elementHeight+', top offset: '+topOffset);
 						if (viewportHeight < elementHeight) viewportShorterThanElement = true;
 						
