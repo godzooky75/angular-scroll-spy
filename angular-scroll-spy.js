@@ -38,7 +38,11 @@
 						target = document.getElementById(id),
 						viewportShorterThanElement = false,
 						percentOfElementNeededInView = 1;
-
+					
+					if(!target && $el.length > 0) {
+						target = $el[0];
+					}
+					
 					// onscroll
 					this.determinePosition = function() {
 						if (initialized) {
